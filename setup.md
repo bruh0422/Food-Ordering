@@ -43,6 +43,7 @@ pip install -r requirements.txt
 ```bash
 python run.py
 ```
+並回到「Messaging API」頁面點擊下方的「Verify」按鈕，若設定成功會顯示「Success」。
 
 ## 機器人運作流程
 ### 使用者執行流程
