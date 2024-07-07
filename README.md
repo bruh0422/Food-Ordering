@@ -1,9 +1,3 @@
----
-title: SITCON Hackathon 2024 專案 README
-tags: SITCON Hackathon 2024, SITCON,  Hackathon , 2024 ,
-GA:
----
-
 # 外食訂購系統
 
 ## 競賽議題 & 子議題
@@ -29,5 +23,6 @@ GA:
     - 不熟悉 LINE Bot SDK 的操作
 
 ### 成果展示
-- 可附上其他專案介紹的投影片/文件等等
+- 還沒
+
 > SITCON Hackathon 2024
