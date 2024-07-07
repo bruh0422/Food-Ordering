@@ -12,6 +12,9 @@ cd Food-Ordering
 pip install -r requirements.txt
 ```
 
+### 編輯檔案
+將 `.env.example` 更名為 `.env`。
+
 ### 選擇連接埠
 在 `.env` 檔案中的 `port=` 後方填入要使用的連接埠。
 
