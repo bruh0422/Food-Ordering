@@ -135,7 +135,7 @@ def process_order(line_bot_api: MessagingApi, order_id: str, uid: str | None, ac
 
             line_bot_api.push_message(PushMessageRequest(to=next_staff, messages=messages))
         else:
-            order_data['finished']['accpeted'][order_id] = order_data['pending'].pop(order_id)
+            order_data['finished']['accepted'][order_id] = order_data['pending'].pop(order_id)
             write_data(order_data, 'system', 'order.json')
 
             ui = render_ui(

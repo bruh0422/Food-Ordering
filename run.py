@@ -340,7 +340,7 @@ def new():
         order_data = load_data('system', 'order.json')
         today_date = datetime.datetime.now(timezone).strftime('%Y%m%d')
 
-        ids = list(order_data['finished']['accpeted'].keys()) + list(order_data['finished']['rejected'].keys()) + list(order_data['pending'].keys())
+        ids = list(order_data['finished']['accepted'].keys()) + list(order_data['finished']['rejected'].keys()) + list(order_data['pending'].keys())
 
         exist_ids = sorted([i for i in ids if i.startswith(today_date)])
 
