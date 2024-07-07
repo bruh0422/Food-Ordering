@@ -1,0 +1,59 @@
+{
+    "type": "bubble",
+    "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "md",
+        "contents": [
+            {
+                "type": "text",
+                "text": "設定選單",
+                "size": "xl",
+                "weight": "bold"
+            },
+            {
+                "type": "text",
+                "text": "設定的選單",
+                "wrap": true,
+                "color": "#aaaaaa",
+                "size": "xxs"
+            }
+        ]
+    },
+    "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+            {
+                "type": "button",
+                "style": "secondary",
+                "action": {
+                    "type": "uri",
+                    "label": "顯示人員名單",
+                    "uri": "{uri}/personnel"
+                },
+                "margin": "sm"
+            },
+            {
+                "type": "button",
+                "style": "secondary",
+                "action": {
+                    "type": "postback",
+                    "label": "更改暱稱",
+                    "data": "action=nickname&type=change"
+                },
+                "margin": "sm"
+            },
+            {
+                "type": "button",
+                "style": "secondary",
+                "action": {
+                    "type": "postback",
+                    "label": "清除暱稱",
+                    "data": "action=nickname&type=clear"
+                },
+                "margin": "sm"
+            }
+        ]
+    }
+}

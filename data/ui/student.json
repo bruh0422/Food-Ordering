@@ -1,0 +1,49 @@
+{
+    "type": "bubble",
+    "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "md",
+        "contents": [
+            {
+                "type": "text",
+                "text": "學生操作選單",
+                "size": "xl",
+                "weight": "bold"
+            },
+            {
+                "type": "text",
+                "text": "學生的操作選單",
+                "wrap": true,
+                "color": "#aaaaaa",
+                "size": "xxs"
+            }
+        ]
+    },
+    "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+            {
+                "type": "button",
+                "style": "secondary",
+                "action": {
+                    "type": "uri",
+                    "label": "送出新申請",
+                    "uri": "{uri}/new?uid={uid}&token={token}"
+                },
+                "margin": "sm"
+            },
+            {
+                "type": "button",
+                "style": "secondary",
+                "action": {
+                    "type": "postback",
+                    "label": "顯示處理中申請",
+                    "data": "action=show&type=waiting"
+                },
+                "margin": "sm"
+            }
+        ]
+    }
+}

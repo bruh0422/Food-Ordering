@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>送出新申請</h2>
+<form method="post">
+    <label for="class">申請班級 / 社團: </label><br><input type="text" name="class" id="class" required><br>
+    <label for="user">訂購人員姓名: </label><br><input type="text" name="user" id="user" required></input><br>
+
+    <br>
+
+    <label for="store">商家名稱: </label><br><input type="text" name="store" id="store" required></input><br>
+    <label for="item">訂購物品: </label><br><textarea type="text" name="item" id="item" required></textarea><br>
+    <label for="pickup_time">預計取餐時間: </label><br><input type="datetime-local" name="pickup_time" id="pickup_time" required><br>
+    <script>
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = ("0" + (now.getMonth() + 1)).slice(-2);
+        var day = ("0" + now.getDate()).slice(-2);
+        var hour = ("0" + now.getHours()).slice(-2);
+        var minute = ("0" + now.getMinutes()).slice(-2);
+        var nowTime = year + "-" + month + "-" + day + "T" + hour + ":" + minute;
+        document.getElementById("pickup_time").setAttribute("min", nowTime);
+    </script>
+
+    <br>
+
+    <label>選擇審核者: </label><br>
+    {% for i in range(1, 6) %}
+        <label for="staff{{i}}">{{i}}. </label>
+        <select name="staff" id="staff{{i}}" required>
+            <option>-</option>
+            {% for staff in staff_list %}
+                <option>{{staff}}</option>
+            {% endfor %}
+        </select><br>
+    {% endfor %}
+
+    <br>
+
+    <button class="send" type="submit" onclick="checkStaffOptions(event)">送出</button>
+    <style>
+        .send {
+            width: 100px;
+            height: 100px;
+            border-radius: 25%;
+            background-image: url(../static/images/button_50-trans.png);
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+            text-align: center;
+            font-size: 125%;
+        }
+    </style>
+    <script>
+        function checkStaffOptions(event) {
+            var staffOptions = document.querySelectorAll('[name="staff"]');
+            var selectedStaff = [];
+            var hasValidOption = false;
+            for (var i=0; i<staffOptions.length; i++) {
+                var staff = staffOptions[i].value;
+                if (staff !== "-") {
+                    if (selectedStaff.includes(staff)) {
+                        alert("不能有重複的審核者");
+                        event.preventDefault();
+                        return;
+                    }
+                    selectedStaff.push(staff);
+                    hasValidOption = true;
+                }
+            }
+            if (!hasValidOption) {
+                alert("請至少選擇一位審核者");
+                event.preventDefault();
+            }
+        }
+    </script>
+
+</form>
+{% endblock content %}

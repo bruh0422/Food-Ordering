@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>人員列表</h2>
+
+<details>
+    <summary>管理員</summary>
+    {{admin|safe}}
+</details>
+
+<br>
+
+<details>
+    <summary>審核者</summary>
+    {{staff|safe}}
+</details>
+
+
+<br>
+
+<details>
+    <summary>學生</summary>
+    {{student|safe}}
+</details>
+{% endblock content %}

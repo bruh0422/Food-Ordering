@@ -1,0 +1,49 @@
+{
+    "type": "bubble",
+    "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "md",
+        "contents": [
+            {
+                "type": "text",
+                "text": "身份選擇",
+                "size": "xl",
+                "weight": "bold"
+            },
+            {
+                "type": "text",
+                "text": "選擇完成後若要更換身份需要管理員協助",
+                "wrap": true,
+                "color": "#aaaaaa",
+                "size": "xxs"
+            }
+        ]
+    },
+    "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+            {
+                "type": "button",
+                "style": "secondary",
+                "action": {
+                    "type": "postback",
+                    "label": "審核者",
+                    "data": "action=role_select&type=select&role=staff"
+                },
+                "margin": "sm"
+            },
+            {
+                "type": "button",
+                "style": "secondary",
+                "action": {
+                    "type": "postback",
+                    "label": "學生",
+                    "data": "action=role_select&type=select&role=student"
+                },
+                "margin": "sm"
+            }
+        ]
+    }
+}

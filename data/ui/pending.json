@@ -1,0 +1,162 @@
+{
+    "type": "bubble",
+    "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+            {
+                "type": "text",
+                "text": "{status}",
+                "weight": "bold",
+                "color": "{color}",
+                "size": "sm"
+            },
+            {
+                "type": "text",
+                "text": "{message}",
+                "color": "#aaaaaa",
+                "size": "sm"
+            },
+            {
+                "type": "text",
+                "text": "{store}",
+                "weight": "bold",
+                "size": "xxl",
+                "margin": "md"
+            },
+            {
+                "type": "text",
+                "text": "{item}",
+                "size": "xs",
+                "color": "#aaaaaa",
+                "wrap": true
+            },
+            {
+                "type": "separator",
+                "margin": "xxl"
+            },
+            {
+                "type": "box",
+                "layout": "vertical",
+                "margin": "xxl",
+                "spacing": "sm",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "申請班級 / 社團",
+                                "size": "sm",
+                                "color": "#111111",
+                                "flex": 0
+                            },
+                            {
+                                "type": "text",
+                                "text": "{class}",
+                                "size": "sm",
+                                "color": "#555555",
+                                "align": "end"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "訂購人員姓名",
+                                "size": "sm",
+                                "color": "#111111",
+                                "flex": 0
+                            },
+                            {
+                                "type": "text",
+                                "text": "{user}",
+                                "size": "sm",
+                                "color": "#555555",
+                                "align": "end"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "預計取餐時間",
+                                "size": "sm",
+                                "color": "#111111",
+                                "flex": 0
+                            },
+                            {
+                                "type": "text",
+                                "text": "{time}",
+                                "size": "sm",
+                                "color": "#555555",
+                                "align": "end"
+                            }
+                        ]
+                    },
+					{
+						"type": "separator",
+						"margin": "xxl"
+					},
+					{
+						"type": "box",
+						"layout": "vertical",
+						"contents": [
+							{
+								"type": "text",
+								"text": "審核順序",
+								"size": "sm",
+								"color": "#111111",
+								"flex": 0
+							},
+							{
+								"type": "text",
+								"text": "{staff}",
+								"size": "sm",
+								"color": "#555555"
+							}
+						],
+						"margin": "xxl"
+					}
+                ]
+            },
+            {
+                "type": "separator",
+                "margin": "xxl"
+            },
+            {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xxl",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "訂單 ID",
+                        "size": "xs",
+                        "color": "#aaaaaa",
+                        "flex": 0
+                    },
+                    {
+                        "type": "text",
+                        "text": "{order_id}",
+                        "color": "#aaaaaa",
+                        "size": "xs",
+                        "align": "end"
+                    }
+                ]
+            }
+        ]
+    },
+    "styles": {
+        "footer": {
+            "separator": true
+        }
+    }
+}

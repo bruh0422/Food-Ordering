@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta name="viewport" content="width=device-width">
+        <meta charset="UTF-8"/>
+        <title>外食訂購系統</title>
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+        <link rel="shortcut icon" href="../static/images/icon.ico"/>
+    </head>
+    <body>
+        <header>
+            <h1><a href="{{url_for('new')}}">校園外食訂購系統</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="{{url_for('github')}}">Github</a></li>
+                    <li><a href="{{url_for('easteregg')}}">🥚</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="blank"></div>
+
+        <main>
+            {% block content %}
+            {% endblock content %}
+        </main>
+    </body>
+</html>
