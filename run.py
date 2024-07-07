@@ -40,6 +40,7 @@ def callback():
     app.logger.info("Request body: " + body)
 
     try:
+        data_check()
         handler.handle(body, signature)
     except InvalidSignatureError:
         app.logger.info("Invalid signature. Please check your channel access token/channel secret.")
@@ -53,6 +54,9 @@ def handle_postback(event: PostbackEvent):
 
     messages = []
 
+    if set_admin(event.source.user_id):
+        messages.append(TextMessage(text='初始化管理員...'))
+
     data = parse_to_dict(event.postback.data)
 
     user, display_name = get_user(line_bot_api, event.source.user_id)
@@ -65,7 +69,7 @@ def handle_postback(event: PostbackEvent):
 
             messages.append(TextMessage(text=f'📝輸入單個使用者 ID / 或輸入 all 來清除所有使用者的身份:'))
         else:
-            if role != []:
+            if role != [] and role != ['admin']:
                 messages.append(TextMessage(text=f'❌你目前的身份是「{role_display}」\n若要更改請洽詢管理員'))
             else:
                 personnel_data = load_data('system', 'personnel.json')
@@ -188,7 +192,7 @@ def handle_message(event: MessageEvent):
     role, role_display = get_role(user)
     msg: str = event.message.text
 
-    if role == []: # 初次使用選擇身份
+    if role == [] or role == ['admin']: # 初次使用選擇身份
         messages.append(TextMessage(text='👋初次使用\n請選擇你的身份'))
         messages.append(FlexMessage(altText='選擇身份', contents=FlexContainer.from_dict(render_ui('role_select'))))
     else: # 若非初次使用
