@@ -72,7 +72,16 @@ def render_ui(name: str, **kwargs) -> dict:
         elif kwargs['status'] == 'reject':
             ui['body']['contents'][0]['text'] = '未通過'
             ui['body']['contents'][0]['color'] = '#ff0000'
-            ui['body']['contents'][1]['text'] = f'❌抱歉! 你的申請未通過!\n\n原因: {kwargs["reason"]}'
+            ui['body']['contents'][1]['text'] = f'❌抱歉! 你的申請未通過!'
+            ui['body']['contents'].insert(
+                2,
+                {
+                    'type': 'text',
+                    'text': f'原因: {kwargs["reason"]}',
+                    'color': '#aaaaaa',
+                    'size': 'sm'
+                }
+            )
 
     return ui
 
