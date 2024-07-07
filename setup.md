@@ -27,6 +27,7 @@ pip install -r requirements.txt
 ![建立機器人](readme_image/3.png)
 4. 到「Basic settings」頁面將「Channel secret」貼到 .env 檔案的 `channel_secret=` 後方。
 5. 到「Messaging API」頁面點擊「Channel access token」下方的「issue」按鈕生成一個 token 並將其貼到貼到 .env 檔案的 `channel_access_token=` 後方。
+6. (可選) 到「Messaging API」頁面中的「LINE Official Account features」分類下的「Auto-reply messages」，點擊右邊的「Edit」，自動重新導向到 [Line Official Account Manager](https://manager.line.biz/) 後，將「加入好友的歡迎訊息」及「自動回應訊息」關閉。
 
 ### 使用 Visual Studio Code 內建功能轉送本機埠
 1. 安裝 [Visual Studio Code](https://code.visualstudio.com/)，使用它開啟複製下來的 Repository 後。
